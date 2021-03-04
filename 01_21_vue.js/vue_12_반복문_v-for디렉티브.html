@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-for 디렉티브 반복문 성적처리</title>
+    <script src="./js/lib/jquery-1.12.4.min.js"></script>
+    <script src="./js/vue/vue.js"></script>
+    
+    <style>
+        * {margin:0;padding:0;vertical-align:middle;border:0;}
+       body {text-align:center;}
+       ul,li {list-style-type:none;}
+       h1 {display:inline-block;text-align:center;font-size:70px;margin-top:100px;padding-bottom:7px;border-bottom:1px solid #ccc000;}
+       #sungjuk {width:100%;font-size:15px;margin:0 auto;text-align:center;padding-top:100px;}
+       .table {display:inline-block;}
+       .row {border:1px solid #444;padding:15px 0;}
+       .field {display:inline-block;width:150px;border-left:1px solid #444;}
+       .field:first-child {border-left:0}
+    </style>
+</head>
+<body>
+    <h1>v-for 디렉티브 반복문 성적처리</h1>
+    <div id="sungjuk">
+        <ul class="table">
+            <li class="row" v-for="key in student">
+                <ul class="record">
+                    <li class="field">{{key.번호}}</li>
+                    <li class="field">{{key.이름}}</li>
+                    <li class="field">{{key.HTMLCSS}}</li>
+                    <li class="field">{{key.JAVA}}</li>
+                    <li class="field">{{key.VUE}}</li>
+                    <li class="field">{{key.GIT}}</li>
+                    <li class="field">{{key.HTMLCSS+key.JAVA+key.GIT}}</li>
+                    <li class="field">{{key.HTMLCSS+key.JAVA+key.GIT/4}}</li>
+                </ul>
+            </li>
+        </ul>
+        
+        <script>
+            const objVue = new Vue({
+                el : "#sungjuk",
+                data : {
+                    student:[
+                        {번호 : 1, 이름 : "일소혜", HTMLCSS : 100, JAVA : 100, VUE : 100, GIT : 100},
+                        {번호 : 2, 이름 : "이소혜", HTMLCSS : 98, JAVA : 86, VUE : 90, GIT : 77},
+                        {번호 : 3, 이름 : "삼소혜", HTMLCSS : 86, JAVA : 90, VUE : 77, GIT : 83},
+                        {번호 : 4, 이름 : "사소혜", HTMLCSS : 90, JAVA : 77, VUE : 83, GIT : 89},
+                        {번호 : 5, 이름 : "오소혜", HTMLCSS : 77, JAVA : 83, VUE : 89, GIT : 86},
+                        {번호 : 6, 이름 : "육소혜", HTMLCSS : 83, JAVA : 98, VUE : 86, GIT : 90},
+                        {번호 : 7, 이름 : "칠소혜", HTMLCSS : 87, JAVA : 68, VUE : 80, GIT : 95}
+                    ],
+                    address : [],
+                    maillist : [],
+                    tel : []
+                },
+
+            });
+        </script>
+    </div>
+</body>
+</html>

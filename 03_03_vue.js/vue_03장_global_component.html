@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/vue/vue.js"></script>
+    <title>Vue Component Registration</title>
+</head>
+<body>
+    <div id="app">
+        <button>컴포넌트 등록</button>
+        <my-component></my-component> <!-- 전역 컴포넌트 표시 -->
+    </div>
+    <script>
+        Vue.component("my-component", {
+            template : "<div>전역 컴포넌트가 등록되었습니다!</div>"
+            // template : 마크업 요소 정의하는 속성, my-component라는 가상 태그를 div태그로 정의함
+        })
+        new Vue({
+            el : "#app"
+        });
+    </script>
+</body>
+</html>
