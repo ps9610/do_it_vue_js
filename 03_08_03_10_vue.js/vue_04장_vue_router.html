@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Router Sample</title>
+    <script src="./js/vue/vue.js"></script>
+    <script src="./js/vue/vue_router.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>뷰 라우터 예제</h1>
+      <!-- Main/Login 컴포넌트로 이동이라는 a 버튼으로 변환 -->
+      <!-- to="" 값이 브라우저 url 끝에 추가 -->
+      <p>
+        <router-link to="/main">Main 컴포넌트로 이동</router-link> 
+        <router-link to="/login">Login 컴포넌트로 이동</router-link>
+      </p>
+      <router-view></router-view>
+    </div>
+
+    <script>
+      // Main, Login 컴포넌트 정의
+      const Main = { template : "<div>main</div>" }
+      const Login = { template : "<div>login</div>" }
+
+      // url 값이 path 일 때, component 값을 표시하도록 정의하는 변수 routes
+      const routes = [
+        { path : "/main", component : Main }, //component 값에는 "" 안함
+        { path : "/login", component : Login }
+      ]
+      //새로운 뷰 라우터 생성, 변수 routes 삽입 = url에 따라 화면 전환되게 정의하는 변수 router
+      let router = new VueRouter({
+        //mode : "history", //index.html#/login에서 # 없애줌
+        routes
+      })
+
+      //새 인스턴스 생성 후 (새 인스턴스에) 정보를 갖고 있는 변수 router를 추가
+      //.$mount() = element 속성
+      let app = new Vue({
+        router
+      }).$mount("#app");
+
+    </script>
+  </body>
+</html>
