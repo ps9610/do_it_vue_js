@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Vue Template - Event Handling | 인자 넘겨받기</title>
+		<script src="./js/vue/vue.js"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<button v-on:click="clickBtn(10)">클릭</button>
+		</div>
+
+		<script>
+			new Vue({
+				el : "#app",
+				methods : {
+					clickBtn : function(num){//인자 넘겨받기
+						return alert("clicked " + num + " times");
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

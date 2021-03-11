@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Vue Template - Javascript Expression</title>
+		<script src="./js/vue/vue.js"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<p>{{message}}</p>
+			<p>{{message + "!!!"}}</p>
+			<p>{{message.split("").reverse().join("")}}</p> 
+			<!-- split("") = 구분자(콤마,따옴표 등)를 이용해 여러 개의 문자열로 나눠라 -->
+			<!-- join("") = 구분자의 모든 요소를 하나의 문자열로 만들어라-->
+		</div>
+
+		<script>
+			new Vue({
+				el : "#app",
+				data : {
+					message : "Hello Vue.js!"
+				}
+			})
+		</script>
+	</body>
+</html>
