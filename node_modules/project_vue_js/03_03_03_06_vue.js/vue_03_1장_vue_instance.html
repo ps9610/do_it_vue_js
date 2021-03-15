@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/vue/vue.js"></script>
+    <title>Vue Instance Lifecycle</title>
+</head>
+<body>
+    <div id="app">
+        {{ message }}
+    </div>
+    <script>
+        new Vue({
+            el : "#app",
+            data : {
+                message : "Hello! Vue.js"
+            },
+            beforeCreate : function(){
+                console.log("beforeCreate")
+            },
+            created : function(){
+                console.log("created")
+            },
+            mounted : function(){
+                console.log("mounted")
+                this.message = "Hello Vue!"; //update 되나 확인하려고
+            },
+            updated : function(){ //데이터 변경으로 화면이 다시 그려질 때 실행되는 로직
+                console.log("updated")
+            }
+        });
+    </script>
+</body>
+</html>
+
+<!--
+    뷰 인스턴스 라이플 사이클 다이어그램
+
+    4단계 : 생성 - 부착 - 갱신 - 소멸
+
+ -->
