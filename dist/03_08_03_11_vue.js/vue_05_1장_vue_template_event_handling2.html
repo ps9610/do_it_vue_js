@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Vue Template - Event Handling | event 인자로 돔 요소 접근하기</title>
+		<script src="./js/vue/vue.js"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<button v-on:click="clickBtn">클릭</button>
+		</div>
+
+		<script>
+			new Vue({
+				el : "#app",
+				methods : {
+					clickBtn : function(event){//인자 넘겨받기
+						console.log(event)
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
